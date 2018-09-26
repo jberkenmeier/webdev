@@ -1,0 +1,339 @@
+.header {
+    overflow: hidden;
+    height:100px;
+    background-color: rgb(93, 97, 146); 
+    padding: 20px;
+    text-align: center;
+}
+
+#logo{
+    display:block;
+    position: relative;
+    float:left;
+    height: 100%; 
+    width: 20%;
+
+}
+
+img{
+   height:75%;
+
+}
+
+#title{
+    /* margin-right:20%;
+    margin-left:20%;
+    margin-bottom: 300px; */
+    margin-top:0;
+    /* padding-bottom: 300px;
+    padding-top:0; */
+}
+
+h1{
+    margin-bottom: 30%;
+    margin-top:0;
+    display:block;
+    float:center;
+    text-align: center;
+    font-size:4vw;
+    font-style: oblique;
+    color:#f2f2f2;
+    text-transform: uppercase;
+    text-shadow: 3px 2px#0a0505;
+}
+
+#logout{
+    display:block;
+    margin-top: 15px;
+}
+
+/* Style the topnav links */
+#logout a {
+    float:right;
+    background-color: rgb(47, 34, 119);
+    color: #f2f2f2;
+    text-align: center;
+    margin-top:10px;
+    padding: 10px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+#logout a:hover {
+    color: black;
+}
+
+/* Style the top navigation bar */
+.outer-nav {
+    overflow: hidden;
+    background-color: rgb(47, 34, 119);
+}
+
+.nav{
+    margin:auto;
+}
+
+/* Style the topnav links */
+.nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.nav a:hover {
+    background-color: rgb(93, 97, 146);
+    color: black;
+    border:solid;
+}
+
+
+.columns{
+    margin-top:3%;
+    margin-bottom:3%;
+
+}
+
+#exercises {
+    float: left;
+    /* position: relative; */
+    width: 30%;
+    margin-left:3.5%;
+    /* padding: 15px; */
+    border-style:solid;
+    background-color: #ddd;
+    /* margin: 15px 45px 15px 45px; */
+}
+
+#history {
+    float: left;
+    /* position: relative; */
+    width: 30%;
+    /* padding: 15px; */
+    margin-left:1%;
+    margin-right:1%;
+    border-style:solid;
+    background-color: #ddd;
+    /* margin: 15px 45px 15px 45px; */
+}
+
+#prs {
+    float: left;
+    /* position: relative; */
+    width: 30%;
+    /* padding: 15px; */
+    border-style:solid;
+    background-color: #ddd;
+    /* margin: 15px 45px 15px 45px; */
+}
+
+.columns a{
+    overflow:hidden;
+    margin:auto;
+    display: block;
+    width:25%;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: rgb(47, 34, 119);
+}
+
+.columns a:hover {
+    background-color: rgb(93, 97, 146);
+    color: black;
+}
+
+html{
+    position:relative; 
+    min-height: 100%;
+  }
+
+body{
+    margin:0;
+    background-color:  #666;
+}
+
+form > h2{
+    color:#fff;
+}
+
+form {
+    margin-left:25%;
+    text-align: center;
+    background-color:  rgb(47, 34, 119);
+    width:50%;
+}
+#author {
+    list-style-type: none;
+}
+
+#login {
+    background-color: rgb(93, 97, 146);
+    border:solid;
+}
+
+#bottom_login{
+    margin-top:50px;
+    background-color:#666;
+}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.footer {
+    display: inline-block;
+    vertical-align: bottom;
+    position: -webkit-sticky;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    margin-top:25px;
+    margin-bottom:0;
+    /* background-color: #cae8ca;
+    border: 2px solid #4CAF50; */
+  }
+
+.clear {
+    clear:both;
+}
+
+.exercise_nav{
+    height: 50px;
+    background-color: #FFF;
+    margin-top:0;
+}
+
+.dropbtn {
+    background-color:  rgb(47, 34, 119);
+   
+    text-align: center;
+    color: white;
+    width:100px;
+    height:50px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    float: left;
+    position: relative;
+    /* display: inline-block; */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left:0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: rgb(93, 97, 146);
+    border:solid;
+}
+
+/* #exercise_title{
+    position:fixed;
+    margin-right:0%;
+} */
+
+p{
+    margin-top:0;
+    margin-bottom:0;
+    position: relative;
+    font-size: 25px;
+    text-align: center;
+}
+
+#exercise_btns{
+    float:right;
+    position:relative;
+    margin-bottom:15px;
+    margin-top:0;
+    /* padding-top:15px; */
+}
+
+#exercise_content{
+    float:center;
+    text-align:center;
+}
+
+ul{
+    list-style-type:none;
+}
+
+#history_header{
+    height: 50px;
+    background-color: #FFF;
+    margin-top:0;
+    text-align:center;
+}
+
+h4{
+    padding-top:5px;
+    font-size:2em;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+#workout_column {
+    text-align: center;
+    float: left;
+    width: 49.8%;
+    border:solid;
+    background-color:#FFF;
+    /* padding: 10px; */
+}
+
+h5{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size:35px;
+}
+
+#logout_page{
+    /* text-align:center; */
+    /* display:block; */
+    margin:auto;
+    margin-top:100px;
+    border:solid;
+    width: 50%;
+    background-color:#FFF;
+}
+
+h6{
+    font-size:3em;
+    text-align: center;
+}
+
+#bottom_logout{
+    text-align: center;
+}

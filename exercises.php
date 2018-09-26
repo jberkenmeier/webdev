@@ -1,0 +1,50 @@
+<html>
+<head>
+
+<title>MyWorkoutSpace</title>
+
+<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+<link rel="icon" type="image/png" href="/images/icon3.png"/>
+
+</head>
+
+
+<?php include('header.php'); ?>
+<?php include('nav.php'); ?>
+
+
+<div class = "exercise_nav">
+    <div class="dropdown" >
+        <button class="dropbtn">List &#9660</button>
+        <div class="dropdown-content">
+            <a href="#">Abs</a>
+            <a href="#">Back</a>
+            <a href="#">Chest</a>
+        </div> 
+    </div>
+
+    <p> My Exercises <p>
+
+
+
+    <div id="exercise_btns">
+        <button class="add_btn">Add New </button>
+        <button class="edit_btn">Edit </button>
+    </div>
+</div>
+
+<div id="exercise_content">
+    <ul>
+        <li><a href="#">Abs </a></li>
+        <li><a href="#">Back </a></li>
+        <li><a href="#">Chest </a></li>
+    </ul>
+</div>
+
+
+
+
+
+<?php include('footer.php'); ?>
+
+</html>
