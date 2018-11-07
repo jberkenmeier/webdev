@@ -9,7 +9,7 @@
         
 <body>
 
-<?php include('header.php'); ?>
+<?php include('loginHeader.php'); ?>
 
 
 <div id="logout_page">

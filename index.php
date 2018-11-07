@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <head>
 
 <title>MyWorkoutSpace</title>
@@ -9,19 +13,28 @@
         
 <body>
 
-<?php include('header.php'); ?>
+<?php include('loginHeader.php'); ?>
 
-<form action="/home.php">
+<?php if (isset($_SESSION['messages'])) {
+  foreach ($_SESSION['messages'] as $message) {?>
+      <div class="message <?php echo isset($_SESSION['validated']) ? $_SESSION['validated'] : '';?>"><?php
+      echo $message; ?></div>
+<?php  }
+ unset($_SESSION['messages']);
+?> </div>
+<?php } ?>
+
+<form method="post" action="/loginhandler.php" enctype="multipart/form-data">
 <h2> LOGIN </h2>
 <div id="login">
   <label for="username"><b>Username</b></label><br>
-  <input type="text" placeholder="Enter Username" name="username" required><br>
+  <input type="text" placeholder="Enter Username"  value="<?php echo isset($_SESSION['presets']['username']) ? $_SESSION['presets']['username'] : ''; ?>" name="username" required><br>
 
   <label for="password"><b>Password</b></label><br>
-  <input type="password" placeholder="Enter Password" name="password" required><br>
+  <input type="password" placeholder="Enter Password"  value="<?php echo isset($_SESSION['presets']['password']) ? $_SESSION['presets']['password'] : ''; ?>" name="password" required><br>
       
   <button type="submit">Login</button>
-  <button type="button" class="cancelbtn">Cancel</button>
+  <button type="reset" class="cancelbtn">Cancel</button>
 </div>
 
 <div id="bottom_login">

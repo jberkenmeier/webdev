@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: /index.php');
+    exit;
+  }
+?>
+
 <html>
 <head>
 
@@ -9,17 +17,57 @@
 </head>
 
 
-<?php include('header.php'); ?>
-<?php include('nav.php'); ?>
+<?php 
+    include('header.php');
+    include('nav.php');
+    require_once 'Dao.php';
+    $dao = new Dao();
+    $lists = $dao->getHistoryList($_SESSION['id']);
+?>
+
+<!-- <div id="history_header">
+    <h4> MY HISTORY </h4><br>
+    <input type="button" onclick="location.href='/addWorkout.php';" value="Add New Workout" />
+</div> -->
+
+<div class = "exercise_nav">
+    <p> MY HISTORY <p>
+
+</div><br>
+
+        
+        
+    <div id="exercise_btns">
+        <input type="button" onclick="location.href='/addWorkout.php';" value="Add New Workout" />
+    </div>
+
+<div id="history_list">
+    <?php
 
 
-<div id="history_header">
-    <h4> MY HISTORY </h4>
+    echo "<table>
+    <tr>
+    <th>Date</th>
+    <th>Exercise</th>
+    <th>Set</th>
+    <th>Rep</th>
+    <th>Weight</th>
+    </tr>";
+
+    foreach ($lists as $list){
+        echo "<tr>";
+        echo "<td>" . htmlentities($list['hist_date']) . "</td>";
+        echo "<td>" . htmlentities($list['hist_exercise']) . "</td>";
+        echo "<td>" . htmlentities($list['hist_set']) . "</td>";
+        echo "<td>" . htmlentities($list['hist_rep']) . "</td>";
+        echo "<td>" . htmlentities($list['hist_weight']) . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    ?>
 </div>
 
-   <iframe src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23333399&amp;src=u.boisestate.edu_3b9se4jfs262g52r696dh5vu1k%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=America%2FDenver" style="border-width:0" width="100%" height="50%" frameborder="0" scrolling="no"></iframe>
-
-<p> NOTE: Calendar does not actually work yet....</p>
 
 <?php include('footer.php'); ?>
 

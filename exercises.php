@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: /index.php');
+    exit;
+  }
+?>
+
 <html>
 <head>
 
@@ -9,41 +17,46 @@
 </head>
 
 
-<?php include('header.php'); ?>
-<?php include('nav.php'); ?>
-
+<?php 
+    include('header.php');
+    include('nav.php');
+    require_once 'Dao.php';
+    $dao = new Dao();
+    $lists = $dao->getExerciseList($_SESSION['id']);
+?>
 
 <div class = "exercise_nav">
-    <div class="dropdown" >
-        <button class="dropbtn">List &#9660</button>
-        <div class="dropdown-content">
-            <a href="#">Abs</a>
-            <a href="#">Back</a>
-            <a href="#">Chest</a>
-        </div> 
-    </div>
+    <p> MY EXERCISES <p>
 
-    <p> My Exercises <p>
-
-
-
-    <div id="exercise_btns">
-        <button class="add_btn">Add New </button>
-        <button class="edit_btn">Edit </button>
-    </div>
+</div><br>
+        
+<div id="exercise_btns">
+    <input type="button" onclick="location.href='/addExercise.php';" value="Add New Exercise" />
+    <input type="button" onclick="location.href='/editExercise.php';" value="Edit Exercise" />
 </div>
 
-<div id="exercise_content">
-    <ul>
-        <li><a href="#">Abs </a></li>
-        <li><a href="#">Back </a></li>
-        <li><a href="#">Chest </a></li>
-    </ul>
+<div id="exercise_list">
+<?php
+
+
+    echo "<table>
+    <tr>
+    <th>Category</th>
+    <th>Exercise</th>
+    <th>Description</th>
+    </tr>";
+
+    foreach ($lists as $list){
+    echo "<tr>";
+    echo "<td>" . htmlentities($list['exer_category']) . "</td>";
+    echo "<td>" . htmlentities($list['exer_name']) . "</td>";
+    echo "<td>" . htmlentities($list['exer_description']) . "</td>";
+    echo "</tr>";
+    }
+    echo "</table>";
+
+    ?>
 </div>
-
-
-
-
 
 <?php include('footer.php'); ?>
 

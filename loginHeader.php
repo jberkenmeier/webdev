@@ -2,10 +2,6 @@
     <div id="logo">
         <img src="/images/logo2.png"/>
     </div>
-
-    <div id="logout">
-        <a href="/logouthandler.php"> LOGOUT </a>
-    </div>
     
     <div id="title">
         <h1>My Workout Space</h1>
