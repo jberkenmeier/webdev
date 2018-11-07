@@ -25,15 +25,15 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 <div class="columns">
   <div id="exercises">
     <a href="/exercises.php">My Exercises</a>
-    <p>View and add your exercises</p>
+    <p>View and manage your exercises</p>
   </div>
   <div id="history">
     <a href="/history.php">My History</a>
-    <p>View and add your workout history</p>
+    <p>View and manage your workout history</p>
   </div>
   <div id="prs">
     <a href="/prs.php">My PR's</a>
-    <p>View and add your pr's</p>
+    <p>View and manage your pr's</p>
   </div>
   <div class="clear"></div>
 </div>
