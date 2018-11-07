@@ -1,14 +1,14 @@
 <?php
 class Dao {
     // mysql://bd40f999007b59:bcf273cf@us-cdbr-iron-east-01.cleardb.net/heroku_7794920f48bea27?reconnect=true
-    // private $host = "us-cdbr-iron-east-01.cleardb.net";
-    // private $db = "heroku_7794920f48bea27";
-    // private $user = "bd40f999007b59";
-    // private $pass = "bcf273cf";
-  private $host = "localhost";
-  private $db = "myworkoutspace";
-  private $user = "root";
-  private $pass = "";
+    private $host = "us-cdbr-iron-east-01.cleardb.net";
+    private $db = "heroku_7794920f48bea27";
+    private $user = "bd40f999007b59";
+    private $pass = "bcf273cf";
+//   private $host = "localhost";
+//   private $db = "myworkoutspace";
+//   private $user = "root";
+//   private $pass = "";
   
   public function getConnection () {
        $conn= new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
