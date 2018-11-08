@@ -38,7 +38,5 @@ $_SESSION['username'] = $username;
 $_SESSION['id'] = $dao->getID($username);
 $_SESSION['logged_in'] = true;
 unset($_SESSION['presets']);
-// unset($_SESSION['presets']);
-
 header('Location: /home.php');
 exit;

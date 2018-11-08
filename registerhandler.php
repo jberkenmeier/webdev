@@ -19,9 +19,15 @@ if(!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2
     $bad = true;
 }
 
+
 if (empty($email)) {
-    $_SESSION['messages'][] = "Email is required.";
-    $bad = true;
+  $_SESSION['messages'][] = "Email is required.";
+  $bad = true;
+}
+
+if(strlen($email) > 200){
+  $_SESSION['messages'][] = "Email needs to be less than 200 characters";
+  $bad = true;
 }
 
 if (empty($username)) {
@@ -29,9 +35,19 @@ if (empty($username)) {
   $bad = true;
 }
 
+if(strlen($username) > 100){
+  $_SESSION['messages'][] = "Username needs to be less than 100 characters";
+  $bad = true;
+}
+
 if (empty($password)) {
   $_SESSION['messages'][] = "Password is required.";
   $bad = true;
+}
+
+if(strlen($password) > 50){
+    $_SESSION['messages'][] = "Password needs to be less than 50 characters";
+    $bad = true;
 }
 
 if($dao->checkRegistrationUsername($username)){
