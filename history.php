@@ -20,16 +20,10 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 <?php 
     include('header.php');
     include('nav.php');
-    // include('subnav.php');
     require_once 'Dao.php';
     $dao = new Dao();
     $lists = $dao->getHistoryList($_SESSION['id']);
 ?>
-
-<!-- <div id="history_header">
-    <h4> MY HISTORY </h4><br>
-    <input type="button" onclick="location.href='/addWorkout.php';" value="Add New Workout" />
-</div> -->
 
 <div class = "exercise_nav">
     <p> MY HISTORY <p>
