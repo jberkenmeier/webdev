@@ -53,8 +53,9 @@ public function getHistoryList ($id) {
 }
 
   public function checkUserValidation ($username, $password) {
+    $hash = md5($password . $username);
     $conn = $this->getConnection();
-    $query = "SELECT * FROM user WHERE user_name='$username' AND user_password='$password'";
+    $query = "SELECT * FROM user WHERE user_password='$hash'";
 
     $result = $conn->query($query);
     $count = $result->rowCount();

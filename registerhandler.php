@@ -4,6 +4,7 @@ session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$hash = md5($password . $username);
 
 $_SESSION['presets']['email'] = $email;
 $_SESSION['presets']['name'] = $username;
@@ -45,10 +46,10 @@ if (empty($password)) {
   $bad = true;
 }
 
-if(strlen($password) > 50){
-    $_SESSION['messages'][] = "Password needs to be less than 50 characters";
-    $bad = true;
-}
+// if(!strlen($password) > 50){
+//     $_SESSION['messages'][] = "Password needs to be less than 50 characters";
+//     $bad = true;
+// }
 
 if(strlen($password) < 8){
   $_SESSION['messages'][] = "Password needs to be 8 characters or more";
@@ -76,7 +77,7 @@ if ($bad) {
 $_SESSION['validated'] = 'good';
 $_SESSION['username'] = $username;
 $_SESSION['logged_in'] = true;
-$dao->addUser($email, $username, $password);
+$dao->addUser($email, $username, $hash);
 $_SESSION['id'] = $dao->getID($username);
 unset($_SESSION['presets']);
 
