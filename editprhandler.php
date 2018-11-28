@@ -24,6 +24,11 @@ if (empty($weight)) {
     $bad = true;
 }
 
+if (!is_numeric($weight)) {
+    $_SESSION['messages'][] = "Weight needs to be a number.";
+    $bad = true;
+}
+
 if ($bad) {
   header('Location: /editprs.php');
   exit;

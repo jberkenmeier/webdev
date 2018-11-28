@@ -12,6 +12,8 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
 <link rel="stylesheet" type="text/css" href="/styles/styles.css">
 <link rel="icon" type="image/png" href="/images/icon3.png"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/fadeout.js"></script>
 
 </head>
         
@@ -51,8 +53,8 @@ echo "</select>";
 
 ?><br>
 
-  <label for="desription"><b>Exercise Description</b></label><br>
-  <textarea id="desc" placeholder="Enter Exercise Description" name="description" required></textarea><br>
+  <label for="description"><b>Exercise Description</b></label><br>
+  <textarea id="desc" placeholder="Enter Exercise Description" value="<?php echo isset($_SESSION['presets']['desc']) ? $_SESSION['presets']['desc'] : ''; ?>" name="description" required></textarea><br>
 
   <button type="submit">Submit</button>
   <button type="reset" class="cancelbtn">Cancel</button>

@@ -8,6 +8,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
 $category = $_POST['category'];
 $id = $_SESSION['id'];
+$_SESSION['presets']['category'] = $category;
 
 require_once 'Dao.php';
 $dao = new Dao();
@@ -20,7 +21,7 @@ if (empty($category)) {
 
 
 if($dao->checkCategory($category, $id)){
-    $_SESSION['messages'][] = "Exercise category already exists, use edit";
+    $_SESSION['messages'][] = "Exercise category already exists";
     $bad = true;
 }
 
@@ -31,8 +32,9 @@ if ($bad) {
 
 // Got here, means everything validated, and the comment will post.
 $_SESSION['validated'] = 'good';
+unset($_SESSION['presets']);
 if(!$dao->addEmptyCategory($category, $id)){
-    $_SESSION['messages'][] = "shit";
+    $_SESSION['messages'][] = "whoops";
 }
 header('Location: /addExercise.php');
 exit;

@@ -50,6 +50,11 @@ if(strlen($password) > 50){
     $bad = true;
 }
 
+if(strlen($password) < 8){
+  $_SESSION['messages'][] = "Password needs to be 8 characters or more";
+  $bad = true;
+}
+
 if($dao->checkRegistrationUsername($username)){
   $_SESSION['messages'][] = "Username already Exists";
   $bad = true;

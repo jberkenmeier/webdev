@@ -18,8 +18,18 @@ require_once 'Dao.php';
 $dao = new Dao();
 $bad = false;
 
+if(empty($exercise)){
+    $_SESSION['messages'][] = "Exercise is required.";
+    $bad = true;
+}
+
 if (empty($set)) {
     $_SESSION['messages'][] = "Set is required.";
+    $bad = true;
+}
+
+if (!is_numeric($set)) {
+    $_SESSION['messages'][] = "Set needs to be a number.";
     $bad = true;
 }
 
@@ -28,14 +38,24 @@ if (empty($rep)) {
     $bad = true;
 }
 
+if (!is_numeric($rep)) {
+    $_SESSION['messages'][] = "Rep needs to be a number.";
+    $bad = true;
+}
+
 if (empty($weight)) {
     $_SESSION['messages'][] = "Weight is required.";
     $bad = true;
 }
 
+if (!is_numeric($weight)) {
+    $_SESSION['messages'][] = "Weight needs to be a number.";
+    $bad = true;
+}
+
 
 if ($bad) {
-  header('Location: /addprs.php');
+  header('Location: /addWorkout.php');
   exit;
 }
 

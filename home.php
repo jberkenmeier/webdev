@@ -20,6 +20,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
 <?php include('header.php');
       include('nav.php'); 
+      // include('subnav.php');
 ?>
             
 <div class="columns">

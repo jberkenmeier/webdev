@@ -13,7 +13,7 @@
 
 
 <div id="logout_page">
-    <h6>You Have Logged Out</h6>
+    <h6>You Have Logged Out<br> Thanks For Using<br> My Workout Space!</h6>
 
     <div id="bottom_logout">
         <span class="login"><a href="/index.php">Back To Login</a></span>
